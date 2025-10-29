@@ -15,6 +15,9 @@ const studentSchema = mongoose.Schema({
     student_branch:{
         type:String,
     },
+    student_section:{
+        type:String,
+    },
     student_Father:{
         type:String,
     },
