@@ -10,8 +10,8 @@ const signup = async(req,res)=>{
     try{
        const campus = await campusModel.findOne({college_id});
        if(campus){
-         return res.status(400).json({
-            Success : false,
+         return res.status(201).json({
+            success : false,
             message : "College ID is already exist please enter new Id."
          })
        }
@@ -22,6 +22,11 @@ const signup = async(req,res)=>{
          password:hashpassword
        })
        const saved = await newCampus.save();
+       return res.status(200).json({
+        success:true,
+        message:"Successfully created"
+
+       })
     }catch(error){
           console.log(error);
           return res.status(404).json({
