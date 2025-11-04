@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import {Link,useNavigate} from 'react-router-dom';
 import './Login.css'
 import axios from "axios"
 function Login(){
   const [college_id,setId] = useState("");
   const [college_name, setName] = useState("");
   const [password ,setPassword] = useState("");
- const [message, setMsg] = useState("");
+  const [message, setMsg] = useState("");
+  const navigate = useNavigate();
   const handleSubmit= async (e)=>{
     e.preventDefault();
       try{
@@ -14,8 +16,17 @@ function Login(){
                           password
           }
           const response = await axios.post("http://localhost:3000/api/auth/signup",newData);
-          console.log(response.data.message);
-          setMsg(response.data.message);
+          if(response.data.success){
+               console.log(response.data.values);
+               localStorage.setItem("college_id",response.data.values);
+               setMsg(response.data.message);
+               navigate("/dashboard")
+          }else{
+               console.log(response.data.message);
+               setMsg(response.data.message);
+          }
+          
+          
       }catch(error){
         console.log(error);
         setMsg(error);
