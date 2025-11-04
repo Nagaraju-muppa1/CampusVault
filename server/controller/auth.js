@@ -24,12 +24,14 @@ const signup = async(req,res)=>{
        const saved = await newCampus.save();
        return res.status(200).json({
         success:true,
+        values:college_id,
         message:"Successfully created"
 
        })
     }catch(error){
           console.log(error);
           return res.status(404).json({
+             success:false,
              message:"Error !!"
           })
     }
@@ -41,20 +43,21 @@ const signin = async (req,res)=>{
         const c_id = await campusModel.findOne({college_id});
         const c_name = await campusModel.findOne({college_name});
         if(!c_id && !c_name){
-            return res.status(400).json({
+            return res.status(201).json({
                 success: false,
                 message:"college_id Or college_name is invalid."
             })
         }
         const isMatch = await bcrypt.compare(password,c_id.password);
         if(!isMatch){
-            return res.status(400).json({
+            return res.status(201).json({
                 success: false,
                 message:"password is Incorrect."
             })
         }
         return res.status(200).json({
             success:true,
+            values:college_id,
             message:"Successfully Login"
         })
      }catch(error){
