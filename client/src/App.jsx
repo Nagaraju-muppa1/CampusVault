@@ -6,6 +6,9 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Signin from './components/Signin';
 import Dashboard  from './components/Dashboard';
+import Faculty from './components/Faculty';
+import Student from './components/Student';
+import AddStudent from './components/AddStudent'
 function App() {
   return (
     <>
@@ -15,6 +18,9 @@ function App() {
               <Route path='/login' element={<Login/>}></Route>
               <Route path='/signin' element={<Signin/>}/>
               <Route path='/dashboard' element={<Dashboard/>}></Route>
+              <Route path='/student' element={<Student/>}/>
+              <Route path='/faculty' element={<Faculty/>}/>
+              <Route path='/addStudent' element={<AddStudent/>}/>
              </Routes>
            </Router>
     </>

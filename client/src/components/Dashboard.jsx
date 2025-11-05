@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 function Dashboard(){
     const navigate = useNavigate();
     const college_id = localStorage.getItem("college_id");
@@ -12,6 +12,8 @@ function Dashboard(){
         <>
           <p> This is Dashboard Page !</p>
           <button onClick={LogOut}>LogOut</button>
+          <Link to='/student'>Student</Link>
+          <Link to='/faculty'>Faculty</Link>
         </>
     )
 
