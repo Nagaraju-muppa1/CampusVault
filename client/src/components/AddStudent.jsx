@@ -2,7 +2,10 @@ import React,{useState} from 'react';
 import {Link} from 'react-router-dom';
 import './Login.css'
 function AddStudent(){
-
+  const college_id = localStorage.getItem("college_id");
+  const [college_name,setName]=useState("");
+  const [student_name,setStdName]=useState("");
+  const [student_rollno,setRollno]=useState("");
   const handleSubmit = async()=>{
     
   }
