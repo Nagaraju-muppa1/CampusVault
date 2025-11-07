@@ -3,23 +3,13 @@ const mongoose = require('mongoose');
 const studentModel = require('../models/student');
 
 const studentSave = async(req,res)=>{
-     const {college_id,
-        college_name,
-        student_name,
-        student_rollno,
-        student_branch,
-        student_year,
-        student_section,
-        student_Father,
-        student_Mother,
-        parent_Mobile,
-        student_email,
-        student_Mobile,
-        year_of_join}  = req.body;
+     const {college_id,college_name,student_name,student_rollno,student_branch,student_year, student_section,student_Father, student_Mother,parent_Mobile,student_email,student_Mobile,year_of_join}  = req.body;
+        console.log(student_name+""+student_rollno);
         try{
             const rollnoExist = await studentModel.findOne({student_rollno});
+            //console.log(rollnoExist);
             if(rollnoExist){
-                return res.status(400).json({
+                return res.status(200).json({
                    Success:false,
                    message:"Roll no already exist"
                 })
