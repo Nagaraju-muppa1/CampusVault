@@ -37,3 +37,104 @@ form button {
 form button:hover {
   background: #0056b3;
 }
+/* ===== Centering container ===== */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+/* ===== Table box ===== */
+table {
+  width: 70%; /* not full width — clean centered table */
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+/* ===== Table header ===== */
+thead {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+}
+
+th {
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Table body ===== */
+td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #333;
+  font-size: 15px;
+}
+
+/* ===== Row hover effect ===== */
+tbody tr:hover {
+  background-color: #f3f4f6;
+  transition: background-color 0.25s ease;
+}
+
+/* ===== Buttons ===== */
+button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #dc2626;
+}
+
+/* ===== Links ===== */
+a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1e40af;
+}
+
+/* ===== Center align the last few action columns ===== */
+td:nth-child(4),
+td:nth-child(5),
+td:nth-child(6) {
+  text-align: center;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 900px) {
+  table {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  th, td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}

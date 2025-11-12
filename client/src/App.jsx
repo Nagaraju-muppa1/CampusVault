@@ -11,6 +11,7 @@ import Student from './components/Student';
 import AddStudent from './components/AddStudent'
 import DeleteStudent from './components/DeleteStudent';
 import DisplayStudent from './components/DisplayStudent';
+import ViewStd from './components/ViewStd';
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
               <Route path='/addStudent' element={<AddStudent/>}/>
               <Route path='/deleteStudent' element={<DeleteStudent/>}/>
               <Route path='/displayStudent' element={<DisplayStudent/>}/>
+              <Route path='/view' element={<ViewStd/>}/>
              </Routes>
            </Router>
     </>
