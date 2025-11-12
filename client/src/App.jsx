@@ -9,6 +9,8 @@ import Dashboard  from './components/Dashboard';
 import Faculty from './components/Faculty';
 import Student from './components/Student';
 import AddStudent from './components/AddStudent'
+import DeleteStudent from './components/DeleteStudent';
+import DisplayStudent from './components/DisplayStudent';
 function App() {
   return (
     <>
@@ -21,6 +23,8 @@ function App() {
               <Route path='/student' element={<Student/>}/>
               <Route path='/faculty' element={<Faculty/>}/>
               <Route path='/addStudent' element={<AddStudent/>}/>
+              <Route path='/deleteStudent' element={<DeleteStudent/>}/>
+              <Route path='/displayStudent' element={<DisplayStudent/>}/>
              </Routes>
            </Router>
     </>

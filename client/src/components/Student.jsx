@@ -5,8 +5,8 @@ function Student(){
         <>
         <h1>Students</h1>
         <Link to='/addStudent'>Add a Student</Link><br/>
-        <Link to='/delete'>Delete</Link><br/>
-        <Link to='/display'>Display</Link><br/>
+        <Link to='/deleteStudent'>Delete</Link><br/>
+        <Link to='/displayStudent'>Display</Link><br/>
         <Link to='/Edit'>Edit</Link><br/>
         </>
     )

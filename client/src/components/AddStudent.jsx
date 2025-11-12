@@ -35,7 +35,7 @@ function AddStudent(){
         student_Mobile,
         year_of_join
     }
-    const response = await axios.post('http://localhost:3000/api/student',{newData});
+    const response = await axios.post('http://localhost:3000/api/student',newData);
     console.log(response);
   }
   return(
