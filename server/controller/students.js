@@ -44,4 +44,50 @@ const studentSave = async(req,res)=>{
         }
 }
 
-module.exports ={studentSave};
+const deleteStudent = async(req,res)=>{
+    const Rollno = req.params.studentRollno;
+    try{
+        console.log(Rollno);
+        const deletedO = await studentModel.findOneAndDelete({ student_rollno:Rollno});
+        if(!deletedO){
+            console.log(deletedO);
+            return res.status(201).json({
+                success:false,
+                message:"Roll no is not exist"
+            })
+        }
+        return res.status(200).json({
+            success:true,
+            message:"Successfully deleted"
+        })
+    }catch(error){
+        console.log(error);
+        return res.status(404).json({
+            success:false,
+            message:"Error"
+        })
+    }
+}
+
+const displayStudents = async(req,res)=>{
+    try{
+        const data = await studentModel.find();
+        const newData =data.map((d)=>({
+             student_name:d.student_name,
+             student_rollno:d.student_rollno,
+             student_branch:d.student_branch
+        }))
+        //console.log(newData)
+        return res.status(200).json({
+            success:true,
+            message:newData
+        })
+       
+    }catch(error){
+        return res.status(404).json({
+            success:false,
+            message:"Error"
+        })
+    }
+}
+module.exports ={studentSave,deleteStudent,displayStudents};
