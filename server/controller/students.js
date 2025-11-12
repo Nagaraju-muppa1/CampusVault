@@ -90,4 +90,21 @@ const displayStudents = async(req,res)=>{
         })
     }
 }
-module.exports ={studentSave,deleteStudent,displayStudents};
+
+const findStudent = async(req,res)=>{
+    try{
+        const students=await studentModel.findOne({student_rollno:req.params.student_rollno})
+        console.log(students);
+        return res.status(200).json({
+            success:true,
+            message:students
+        })
+    }catch(error){
+        console.log(error);
+        return res.status(404).json({
+            success:false,
+            message:"Error"
+        })
+    }
+}
+module.exports ={studentSave,deleteStudent,displayStudents,findStudent};
